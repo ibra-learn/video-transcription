@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             })
             const result = await response.json()
             if(result.success){
-                messageDiv.textContent = `File uploaded successfully: ${result.filename} (${result.fileSize})`
+                messageDiv.innerHTML = `File uploaded successfully: ${result.filename} (${Math.round(result.fileSize, 2)})<br>
+                <a href="/player/${result.filename}"> View Video </a>`
             }else{
                 messageDiv.textContent = `Error : ${result.error}`
             }

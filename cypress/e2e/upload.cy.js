@@ -3,8 +3,10 @@ describe('Upload the Video', () => {
     // before each test visit
     cy.visit('http://localhost:3000');
   });
+  
 
   it('loads the homepage successfully', () => {
+    cy.visit('http://localhost:3000');
     //check that the title appears
     cy.contains('Video Transcription App').should('be.visible')
 
@@ -22,6 +24,9 @@ describe('Upload the Video', () => {
     cy.get('input[type="file"]').attachFile('test-video.mp4')
     cy.get('button[type="submit"]').click()
     cy.contains('File uploaded successfully', {timeout : 2000 }).should('be.visible')
+    cy.contains('View Video').should('be.visible')
+    cy.get('a[href^="/player"]').click()
+    cy.get('video#video-player').should('exist')
   });
 
 })

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Player</h1>
+        <div class="video-container">
+            <video id="video-player" controls width="100%">
+                <source src="/video/<%= filename %>" type="video/mp4">
+                Your Browser doesnt support the video Tag 
+            </video>
+        </div>
+        <div class="controls">
+            <a href="/" class="back-button">Back to Upload</a>
+
+        </div>
+    </div>
+</body>
+
+
+</html>
